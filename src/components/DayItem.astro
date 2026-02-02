@@ -1,0 +1,21 @@
+---
+type Props = {
+  title: string;
+  slug: string;
+  className?: string;
+};
+
+const { title, slug, className } = Astro.props;
+
+const path = `${slug}/`;
+const displaySlug = slug.replace("-", "");
+const formatedTitle = title.slice(0, 25);
+---
+
+<a
+  href={path}
+  class:list={[className, " flex justify-between uppercase  px-2 text-xs border border-zinc-800 border-t-0 first:border-t hover:bg-zinc-800 opacity-80 hover:opacity-100 transition-all"]}
+>
+  <span class="scramble">{formatedTitle}</span>
+  <span class="scramble">{displaySlug}</span>
+</a>

@@ -1,0 +1,29 @@
+---
+type Props = {
+    text?: string;
+};
+
+const { text = "Pasa el mouse aquí" } = Astro.props;
+---
+
+<span id="scramble-text" class="cursor-pointer">{text}</span>
+
+<script>
+    import { scrambleText } from "motion-plus-dom";
+    import { hover, stagger } from "motion";
+
+    const element = document.querySelector("#scramble-text") as Element | null;
+
+    if (element) {
+        hover(element, () => {
+
+            const animation = scrambleText(element, {
+                duration: 1,
+            });
+
+            return () => {
+                animation.finish();
+            };
+        });
+    }
+</script>

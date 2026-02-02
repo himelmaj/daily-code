@@ -1,0 +1,48 @@
+---
+import { getCollection } from "astro:content";
+import DayItem from "./DayItem.astro";
+
+const days = await getCollection("days");
+---
+
+<section class="opacity-0 day-list">
+    {
+        days.map(({ data: { title }, slug }) => (
+            <DayItem title={title} slug={slug} className="day-link"/>
+        ))
+    }
+</section>
+
+<script>
+    import { animate, hover, stagger } from "motion";
+    import { scrambleText } from "motion-plus-dom";
+
+    const container = document.querySelector(".day-list");
+    const links = document.querySelectorAll<HTMLAnchorElement>(".day-link");
+
+    if (container && links.length > 0) {
+        animate(container, { opacity: 1 }, { duration: 0.3 });
+        animate(links, { opacity: 1 }, { delay: stagger(0.08) });
+
+        links.forEach((link) => {
+            const texts = link.querySelectorAll<HTMLElement>(".scramble");
+
+            texts.forEach((el) => {
+                el.dataset.original = el.textContent ?? "";
+            });
+
+            hover(link, () => {
+                const animations = Array.from(texts).map((el, i) =>
+                    scrambleText(el, {
+                        duration: 1,
+                        delay: i * 0.05,
+                    }),
+                );
+
+                return () => {
+                    animations.forEach((a) => a.finish());
+                };
+            });
+        });
+    }
+</script>

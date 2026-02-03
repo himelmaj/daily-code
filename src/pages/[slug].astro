@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
-import type { CollectionEntry } from "astro:content";
 import Layout from "../layouts/Layout.astro";
+import removeDashes from "@/utils/remove-dashes.ts";
 
 export async function getStaticPaths() {
     const days = await getCollection("days");
@@ -17,7 +17,7 @@ const { day } = Astro.props;
 const { Content } = await day.render();
 ---
 
-<Layout title={day.data.title}>
+<Layout title={removeDashes(day.slug).toUpperCase() + " | Daily Code"}>
     <a href="/" class="text-sm text-neutral-500">← Volver</a>
     <div class="container mx-auto max-w-3xl px-4 py-2">
         <h1 class="text-2xl font-bold">{day.data.title}</h1>

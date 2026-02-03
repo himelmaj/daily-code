@@ -37,9 +37,8 @@ const { title = "Daily Code", description = "Daily Code" } = Astro.props;
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-
-
     <meta name="generator" content={Astro.generator} />
+
     <ClientRouter />
 
     <SEO
@@ -49,7 +48,7 @@ const { title = "Daily Code", description = "Daily Code" } = Astro.props;
         basic: {
           title: title,
           type: "website",
-          image: "/favicon.svg",
+          image: new URL("/favicon-16x16.png", Astro.url).toString(),
         },
       }}
       twitter={{

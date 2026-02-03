@@ -7,6 +7,7 @@ import mdx from '@astrojs/mdx'
 import remarkToc from 'remark-toc'
 import rehypePresetMinify from 'rehype-preset-minify'
 import react from '@astrojs/react';
+import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   vite: {
@@ -20,5 +21,5 @@ export default defineConfig({
     rehypePlugins: [rehypePresetMinify],
     remarkRehype: { footnoteLabel: 'Footnotes' },
     gfm: false
-  }), react()]
+  }), react(), sitemap()]
 })

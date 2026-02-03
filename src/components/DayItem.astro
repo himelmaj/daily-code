@@ -1,4 +1,7 @@
 ---
+import limitText from "@/utils/limit-text.ts";
+import removeDashes from "@/utils/remove-dashes.ts";
+
 type Props = {
   title: string;
   slug: string;
@@ -7,15 +10,17 @@ type Props = {
 
 const { title, slug, className } = Astro.props;
 
-const path = `${slug}/`;
-const displaySlug = slug.replace("-", "");
-const formatedTitle = title.slice(0, 25);
+const displaySlug = removeDashes(slug);
+const shortTitle = limitText(title, 25);
 ---
 
 <a
-  href={path}
-  class:list={[className, " flex justify-between uppercase  px-2 text-xs border border-zinc-800 border-t-0 first:border-t hover:bg-zinc-800 opacity-80 hover:opacity-100 transition-all text-neutral-500 hover:text-white"]}
+  href={slug}
+  class:list={[
+    className,
+    "flex justify-between uppercase px-2 text-xs border border-zinc-800 border-t-0 first:border-t hover:bg-zinc-800 opacity-80 hover:opacity-100 transition-all text-neutral-500 hover:text-white",
+  ]}
 >
-  <span class="scramble">{formatedTitle}</span>
-  <span class="scramble w-20">{displaySlug}</span>
+  <span class="scramble">{shortTitle}</span>
+  <span class="scramble w-14">{displaySlug}</span>
 </a>

@@ -25,13 +25,13 @@ X_5 = [3, 3, 3]  // X_5[0] = X_4[0] - X_4[1] = 6 - 3
 
 The returning output is the sum of the final transformation (here 9).
 
-## Example
+# Example
 
 ```javascript
 solution([6, 9, 21]) // → 9
 ```
 
-## Solution steps
+# Solution steps
 
 ```javascript
 [6, 9, 12] // X[2] = 21 - 9
@@ -41,6 +41,31 @@ solution([6, 9, 21]) // → 9
 [3, 3, 3]  // X[0] = 6 - 3
 ```
 
-## Additional notes
+# Additional notes
 
 There are performance tests consisted of very big numbers and arrays of size at least 30000. Please write an efficient algorithm to prevent timeout.
+
+# My solution
+
+```javascript
+function solution(X) {
+    while (true) {
+        let allEqual = true;
+        for (let i = 1; i < X.length; i++) {
+            if (X[i] !== X[i - 1]) {
+                allEqual = false;
+                break;
+            }
+        }
+        if (allEqual) {
+            return X[0] * X.length;
+        }
+        let min = Math.min(...X);
+        for (let i = 0; i < X.length; i++) {
+            if (X[i] > min) {
+                X[i] = X[i] - min;
+            }
+        }
+    }
+}
+```

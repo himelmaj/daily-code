@@ -16,7 +16,7 @@ export default defineConfig({
 
   integrations: [mdx({
     syntaxHighlight: 'shiki',
-    shikiConfig: { theme: 'github-dark' },
+    shikiConfig: { theme: 'vesper' },
     remarkPlugins: [remarkToc],
     rehypePlugins: [rehypePresetMinify],
     remarkRehype: { footnoteLabel: 'Footnotes' },

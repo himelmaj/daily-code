@@ -58,6 +58,7 @@ const {
       sizes="192x192"
       href="/android-icon-192x192.png"
     />
+
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -72,14 +73,21 @@ const {
     <SEO
       title={title}
       description={description}
+      
       openGraph={{
         basic: {
           title: title,
           type: "website",
-          image: "https://daily-code-gamma.vercel.app/favicon-16x16.png",
-          url: "https://daily-code-gamma.vercel.app/favicon-16x16.png"
+          image: "https://daily-code-gamma.vercel.app/og.png",
+          url: "https://daily-code-gamma.vercel.app",
         },
+        optional: {
+          locale: "es_ES",
+          siteName: "Daily Code",
+          description: description
+        }
       }}
+
       twitter={{
         card: "summary_large_image",
         creator: "@himelstudio",

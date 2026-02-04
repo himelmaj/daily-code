@@ -1,6 +1,16 @@
-# Daily Code
+![Daily Code Screenshot](/public/screenshot.png)
 
-Un proyecto personal para practicar y registrar ejercicios diarios de programación y lógica.
+<p align="center">
+	<h1 align="center"><b>Daily Code</b></h1>
+<p align="center">
+    Un proyecto personal para practicar y registrar ejercicios diarios de programación y lógica.
+    <br />
+    <br />
+    <a href="https://dailycode.himel.studio">Website</a>
+  </p>
+</p>
+
+</p>
 
 ## 📝 Descripción
 
@@ -48,20 +58,22 @@ src/
 
 Los ejercicios se almacenan en `src/content/days/` como archivos MDX con el siguiente formato:
 
-```mdx
+````mdx
 ---
-title: "Título del ejercicio"
-description: "Descripción breve"
+title: 'Título del ejercicio'
 date: YYYY-MM-DD
 ---
 
 ## Descripción
+
 Contenido del ejercicio con código y explicaciones...
 
 ```typescript
-const ejemplo = "código del ejercicio";
+const ejemplo = 'código del ejercicio'
 ```
-```
+````
+
+````
 
 ## 🛠️ Instalación y Desarrollo
 
@@ -70,9 +82,10 @@ const ejemplo = "código del ejercicio";
    npm install
    # o
    bun install
-   ```
+````
 
 2. **Iniciar servidor de desarrollo**:
+
    ```bash
    npm run dev
    # o
@@ -80,6 +93,7 @@ const ejemplo = "código del ejercicio";
    ```
 
 3. **Construir para producción**:
+
    ```bash
    npm run build
    # o
@@ -96,14 +110,17 @@ const ejemplo = "código del ejercicio";
 ## 🎨 Personalización
 
 ### Fuentes
+
 - **Pirata One**: Para el título principal (hero)
 - **Geist Sans**: Para el contenido general
 
 ### Tema
+
 - El sitio utiliza Tailwind CSS con un diseño oscuro/moderno
 - Syntax highlighting configurado con el tema "vesper"
 
 ### Animaciones
+
 - Motion para animaciones declarativas
 
 ## 📄 Scripts Disponibles

@@ -1,43 +1,134 @@
-# Astro Starter Kit: Minimal
+# Daily Code
 
-```sh
-bun create astro@latest -- --template minimal
+Un proyecto personal para practicar y registrar ejercicios diarios de programación y lógica.
+
+## 📝 Descripción
+
+DailyCode es una forma de practicar lógica de programación. Es lo que más me cuesta porque si no lo practico, se me olvida. Así que creé este proyecto para subir cada día un ejercicio que haya resuelto. Mi objetivo es mejorar en esto y poder aplicarlo en mis proyectos.
+
+## 🚀 Características
+
+- **Blog de ejercicios diarios**: Cada día se publica un nuevo ejercicio de programación
+- **Soporte MDX**: Los ejercicios están escritos en MDX con sintaxis highlighting
+- **Diseño responsivo**: Interfaz adaptable a diferentes dispositivos
+- **Animaciones**: Utiliza GSAP y Motion para animaciones fluidas
+- **SEO optimizado**: Configurado con sitemap y metaetiquetas
+
+## 🛠️ Tecnologías
+
+- **[Astro](https://astro.build/)** - Framework web para sitios estáticos
+- **[React](https://reactjs.org/)** - Biblioteca JavaScript para UI
+- **[Tailwind CSS](https://tailwindcss.com/)** - Framework de CSS utilitario
+- **[MDX](https://mdxjs.com/)** - Markdown con JSX
+- **[TypeScript](https://www.typescriptlang.org/)** - Tipado estático para JavaScript
+- **[Motion](https://motion.dev/)** - Animaciones declarativas
+
+## 📁 Estructura del Proyecto
+
+```
+src/
+├── components/          # Componentes de Astro y React
+│   ├── DayItem.astro   # Componente para cada ejercicio
+│   ├── DayList.astro   # Lista de ejercicios
+│   ├── Hero.astro      # Sección hero principal
+│   └── ...
+├── content/
+│   └── days/           # Contenido de los ejercicios diarios (MDX)
+├── layouts/
+│   └── Layout.astro    # Layout principal del sitio
+├── pages/
+│   ├── index.astro     # Página de inicio
+│   └── [slug].astro    # Páginas individuales de ejercicios
+├── styles/
+│   └── global.css      # Estilos globales
+└── utils/              # Utilidades y helpers
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 📚 Contenido
 
-## 🚀 Project Structure
+Los ejercicios se almacenan en `src/content/days/` como archivos MDX con el siguiente formato:
 
-Inside of your Astro project, you'll see the following folders and files:
+```mdx
+---
+title: "Título del ejercicio"
+description: "Descripción breve"
+date: YYYY-MM-DD
+---
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+## Descripción
+Contenido del ejercicio con código y explicaciones...
+
+```typescript
+const ejemplo = "código del ejercicio";
+```
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🛠️ Instalación y Desarrollo
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+1. **Instalar dependencias**:
+   ```bash
+   npm install
+   # o
+   bun install
+   ```
 
-Any static assets, like images, can be placed in the `public/` directory.
+2. **Iniciar servidor de desarrollo**:
+   ```bash
+   npm run dev
+   # o
+   bun run dev
+   ```
 
-## 🧞 Commands
+3. **Construir para producción**:
+   ```bash
+   npm run build
+   # o
+   bun run build
+   ```
 
-All commands are run from the root of the project, from a terminal:
+4. **Previsualizar producción**:
+   ```bash
+   npm run preview
+   # o
+   bun run preview
+   ```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `bun install`             | Installs dependencies                            |
-| `bun dev`             | Starts local dev server at `localhost:4321`      |
-| `bun build`           | Build your production site to `./dist/`          |
-| `bun preview`         | Preview your build locally, before deploying     |
-| `bun astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `bun astro -- --help` | Get help using the Astro CLI                     |
+## 🎨 Personalización
 
-## 👀 Want to learn more?
+### Fuentes
+- **Pirata One**: Para el título principal (hero)
+- **Geist Sans**: Para el contenido general
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### Tema
+- El sitio utiliza Tailwind CSS con un diseño oscuro/moderno
+- Syntax highlighting configurado con el tema "vesper"
+
+### Animaciones
+- Motion para animaciones declarativas
+
+## 📄 Scripts Disponibles
+
+- `dev`: Inicia servidor de desarrollo
+- `build`: Construye el sitio para producción
+- `preview`: Previsualiza el sitio construido
+- `astro`: CLI de Astro para comandos adicionales
+
+## 🚀 Despliegue
+
+Este proyecto está configurado para ser desplegado en cualquier plataforma estática:
+
+- Vercel
+- Netlify
+- Cloudflare Pages
+- GitHub Pages
+- Y más...
+
+El proyecto genera un sitio completamente estático optimizado para producción.
+
+## 📝 Contribuciones
+
+Este es un proyecto personal para practicar, pero si encuentras algún error o sugerencia de mejora, ¡siéntete libre de abrir un issue!
+
+## 📄 Licencia
+
+MIT License - Puedes usar este código como referencia para tus propios proyectos.

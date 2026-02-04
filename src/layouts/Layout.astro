@@ -76,7 +76,7 @@ const {
         basic: {
           title: title,
           type: "website",
-          image: new URL("/favicon-16x16.png", Astro.url).toString(),
+          image: "/favicon-16x16.png",
         },
       }}
       twitter={{
@@ -86,9 +86,9 @@ const {
         title: "Daily Code",
         description: "",
         image: "/og.png",
-        imageAlt: "Banner de Daily Code"
-      }},
-      
+        imageAlt: "Banner de Daily Code",
+      }}
+      ,
     />
   </head>
   <body class="min-h-screen bg-neutral-950 text-white opacity-80">

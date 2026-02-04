@@ -11,7 +11,10 @@ interface Props {
   description?: string;
 }
 
-const { title = "Daily Code", description = "DailyCode es una forma de practicar lógica de programación. Es lo que más me cuesta porque si no lo practico, se me olvida. Así que creé este proyecto para subir cada día un ejercicio que haya resuelto. Mi objetivo es mejorar en esto y poder aplicarlo en mis proyectos." } = Astro.props;
+const {
+  title = "Daily Code",
+  description = "DailyCode es una forma de practicar lógica de programación. Es lo que más me cuesta porque si no lo practico, se me olvida. Así que creé este proyecto para subir cada día un ejercicio que haya resuelto. Mi objetivo es mejorar en esto y poder aplicarlo en mis proyectos.",
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -77,8 +80,15 @@ const { title = "Daily Code", description = "DailyCode es una forma de practicar
         },
       }}
       twitter={{
+        card: "summary_large_image",
         creator: "@himelstudio",
-      }}
+        site: "dailycode.himel.studio",
+        title: "Daily Code",
+        description: "",
+        image: new URL("/twitter-card.png", Astro.url).toString(),
+        imageAlt: "Banner de Daily Code"
+      }},
+      
     />
   </head>
   <body class="min-h-screen bg-neutral-950 text-white opacity-80">
